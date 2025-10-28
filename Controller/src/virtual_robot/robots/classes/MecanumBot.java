@@ -75,7 +75,7 @@ public class MecanumBot extends MecanumPhysicsBase {
 
     protected void createHardwareMap(){
         super.createHardwareMap();
-        encoderMotorType = MotorType.Neverest40;
+        encoderMotorType = MotorType.GoBilda312;
         hardwareMap.put("back_servo", new ServoImpl());
         String[] encoderNames = new String[] {"enc_right", "enc_left", "enc_x"};
         for (int i=0; i<3; i++){

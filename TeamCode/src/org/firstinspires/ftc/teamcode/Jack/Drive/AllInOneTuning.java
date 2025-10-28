@@ -44,15 +44,21 @@ public class AllInOneTuning extends OpMode {
     }
 
     public void menuSelectUpdate(){
+        gamepad.update();
         telemetry.addData("Selected tuning mode: ", mode.name());
         if(gamepad.isGamepadReady()) {
-            if (gamepad.gamepad.dpad_up) {
-                mode = modes.values()[Math.max(0, (selectedMode - 1))];
-            } else if (gamepad.gamepad.dpad_down) {
-                mode = modes.values()[Math.min((selectedMode - 1), modes.values().length - 1)];
+            if (gamepad.dpad_up) {
+                selectedMode -= 1;
+                mode = modes.values()[Math.max(0, (selectedMode))];
+                gamepad.resetTimer();
+            } else if (gamepad.dpad_down) {
+                selectedMode += 1;
+                mode = modes.values()[Math.min((selectedMode), modes.values().length - 1)];
+                gamepad.resetTimer();
             }
-            if (gamepad.gamepad.circle) {
+            if (gamepad.circle) {
                 isModeSelected = modeSelected.SELECTED;
+                gamepad.resetTimer();
             }
         }
     }

@@ -22,6 +22,7 @@ import org.firstinspires.ftc.robotcore.external.matrices.VectorF;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.Pose2D;
+import org.firstinspires.ftc.teamcode.Jack.Drive.RobotConstantsV1;
 import virtual_robot.config.Config;
 import virtual_robot.controller.*;
 import virtual_robot.util.AngleUtils;
@@ -85,10 +86,10 @@ public abstract class MecanumPhysicsBase extends VirtualBot {
         super.initialize();
         hardwareMap.setActive(true);
         motors = new DcMotorExImpl[]{
-                (DcMotorExImpl) hardwareMap.get(DcMotorEx.class, "back_left_motor"),
-                (DcMotorExImpl) hardwareMap.get(DcMotorEx.class, "front_left_motor"),
-                (DcMotorExImpl) hardwareMap.get(DcMotorEx.class, "front_right_motor"),
-                (DcMotorExImpl) hardwareMap.get(DcMotorEx.class, "back_right_motor")
+                (DcMotorExImpl) hardwareMap.get(DcMotorEx.class, "bl"),
+                (DcMotorExImpl) hardwareMap.get(DcMotorEx.class, "fl"),
+                (DcMotorExImpl) hardwareMap.get(DcMotorEx.class, "fr"),
+                (DcMotorExImpl) hardwareMap.get(DcMotorEx.class, "br")
         };
         distanceSensors = new VirtualRobotController.DistanceSensorImpl[]{
                 hardwareMap.get(VirtualRobotController.DistanceSensorImpl.class, "front_distance"),
@@ -156,7 +157,7 @@ public abstract class MecanumPhysicsBase extends VirtualBot {
      */
     protected void createHardwareMap() {
         hardwareMap = new HardwareMap();
-        String[] motorNames = new String[]{"back_left_motor", "front_left_motor", "front_right_motor", "back_right_motor"};
+        String[] motorNames = new String[]{RobotConstantsV1.backLeft, RobotConstantsV1.frontLeft, RobotConstantsV1.frontRight, RobotConstantsV1.backRight};
         for (int i=0; i<4; i++){
             hardwareMap.put(motorNames[i], new DcMotorExImpl(MOTOR_TYPE, motorController0, i));
         }
@@ -166,7 +167,7 @@ public abstract class MecanumPhysicsBase extends VirtualBot {
         hardwareMap.put("imu", new BNO055IMUNew(this, 10));
         hardwareMap.put("color_sensor", controller.new ColorSensorImpl());
         hardwareMap.put("sensor_otos", new SparkFunOTOSInternal());
-        hardwareMap.put("pinpoint", new GoBildaPinpointDriverInternal());
+        hardwareMap.put(RobotConstantsV1.pinpointName, new GoBildaPinpointDriverInternal());
         hardwareMap.put("octoquad", new OctoQuadImpl());
     }
 

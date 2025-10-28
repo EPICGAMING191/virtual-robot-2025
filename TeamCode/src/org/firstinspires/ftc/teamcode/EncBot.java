@@ -29,7 +29,7 @@ public class EncBot {
     public double[] pose = new double[3];
 
     public void init(HardwareMap hwMap){
-        String[] motorNames =  new String[]{"back_left_motor", "front_left_motor", "front_right_motor", "back_right_motor"};
+        String[] motorNames =  new String[]{"bl", "fl", "fr", "br"};
         for (int i=0; i<4; i++) motors[i] = hwMap.get(DcMotorEx.class, motorNames[i]);
         motors[0].setDirection(DcMotorSimple.Direction.REVERSE);
         motors[1].setDirection(DcMotorSimple.Direction.REVERSE);

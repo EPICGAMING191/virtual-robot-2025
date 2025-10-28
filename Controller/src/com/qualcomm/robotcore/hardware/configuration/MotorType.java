@@ -21,6 +21,7 @@ public enum MotorType {
     Neverest60(1680, 2500, false, 60, 0.85, 3.713),
     Gobilda192(537.6,2500,false,19.2,0.85, 1.188),
     Gobilda137(383.6, 2500, false, 13.7, 0.85, 0.8476),
+    GoBilda312(537.7, 2500, false, 19.2, 0.85, 1.188),
     RevUltraPlanetaryOneToOne(28, 2800, false, 1, 1.0, 0.1050);
 
     MotorType(double ticksPerRotation, double maxTicksPerSecond, boolean reversed, double gearing,

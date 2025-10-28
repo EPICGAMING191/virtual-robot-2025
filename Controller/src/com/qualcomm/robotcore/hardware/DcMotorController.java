@@ -52,7 +52,7 @@ public interface DcMotorController extends HardwareDevice {
     /**
      * Retrieves the motor type configured for this motor
      * @param motor the motor in question
-     * @return the configured type for that motor, or {@link MotorConfigurationType#getUnspecifiedMotorType()}
+     * @return the configured type for that motor, or
      * if no type has been configured
      */
     MotorConfigurationType getMotorType(int motor);

@@ -22,21 +22,23 @@ public class RobotConstantsV1 {
 
     //AUTONOMOUS-------------------------------------------------------------------------------------
     //Auto, needs measuring, in inches
-    public static double forwardPodY = -5;
-    public static double strafePodX = 0.5;
+    public static double forwardPodY = -1.5;
+    public static double strafePodX = -6.75;
     public static DistanceUnit podsMeasurementUnit = DistanceUnit.INCH;
 
-    public static double xVelocity = 49.88;
-    public static double yVelocity = 49.88;
+    public static double xVelocity = 60.5432;
+    public static double yVelocity = 47.5458;
 
     //Tuning values
     public static double robotMassKG = 10;
-    public static double forwardZeroPowerAcceleration = -10;
-    public static double lateralZeroPowerAcceleration = 10;
+    public static double forwardZeroPowerAcceleration = -28.432;
+    public static double lateralZeroPowerAcceleration = 68.4945;
     public static double centripetalScaling = 0.005;
 
     //PIDs
-    public static PIDFCoefficients translationalPIDCoefficients = new PIDFCoefficients(0.3, 0, 0.01, 0);
-    public static PIDFCoefficients headingPIDFCoefficients = new PIDFCoefficients(2, 0, 0.01, 0);
-    public static FilteredPIDFCoefficients drivePIDCoefficients = new FilteredPIDFCoefficients(0.025, 0, 0, 0.6, 0);
+    public static PIDFCoefficients translationalPIDCoefficients = new PIDFCoefficients(0.15, 0, 0.002, 0);
+    public static PIDFCoefficients headingPIDFCoefficients = new PIDFCoefficients(3, 0, 0.2, 0);
+    public static FilteredPIDFCoefficients drivePIDCoefficients = new FilteredPIDFCoefficients(0.15, 0, 0.0004, 0.6, 0);
+
+    public static double shotDelay = 0.5;
 }

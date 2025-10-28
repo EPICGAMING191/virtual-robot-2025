@@ -14,10 +14,10 @@ import org.firstinspires.ftc.robotcore.external.navigation.*;
 public class MecanumDemo extends LinearOpMode {
 
     public void runOpMode(){
-        DcMotor m1 = hardwareMap.dcMotor.get("back_left_motor");
-        DcMotor m2 = hardwareMap.dcMotor.get("front_left_motor");
-        DcMotor m3 = hardwareMap.dcMotor.get("front_right_motor");
-        DcMotor m4 = hardwareMap.dcMotor.get("back_right_motor");
+        DcMotor m1 = hardwareMap.dcMotor.get("bl");
+        DcMotor m2 = hardwareMap.dcMotor.get("fl");
+        DcMotor m3 = hardwareMap.dcMotor.get("fr");
+        DcMotor m4 = hardwareMap.dcMotor.get("br");
         m1.setDirection(DcMotor.Direction.REVERSE);
         m2.setDirection(DcMotor.Direction.REVERSE);
         m1.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
