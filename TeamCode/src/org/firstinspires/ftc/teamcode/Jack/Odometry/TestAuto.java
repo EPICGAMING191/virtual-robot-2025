@@ -113,7 +113,7 @@ public class TestAuto extends LinearOpMode {
     }
 
     public boolean isReadyForNextPath(){
-        return  follower.isBusy() && follower.getCurrentTValue() > tValues.get(pathState.ordinal()) && readyForNextState;
+        return  follower.isBusy() && follower.getCurrentTValue() > tValues.get(pathState.ordinal()) && Math.abs(follower.getVelocity().getXComponent()) <= 1;
     }
 
 
