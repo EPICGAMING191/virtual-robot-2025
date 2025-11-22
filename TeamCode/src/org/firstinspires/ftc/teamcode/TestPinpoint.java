@@ -26,10 +26,10 @@ public class TestPinpoint extends LinearOpMode {
         pinPoint.setOffsets(100, 100, DistanceUnit.MM);
         pinPoint.setEncoderResolution(336.88, DistanceUnit.INCH);
 
-        bl = hardwareMap.get(DcMotorEx.class, "back_left_motor");
-        fl = hardwareMap.get(DcMotorEx.class, "front_left_motor");
-        fr = hardwareMap.get(DcMotorEx.class, "front_right_motor");
-        br = hardwareMap.get(DcMotorEx.class, "back_right_motor");
+        bl = hardwareMap.get(DcMotorEx.class, "bl");
+        fl = hardwareMap.get(DcMotorEx.class, "fl");
+        fr = hardwareMap.get(DcMotorEx.class, "fr");
+        br = hardwareMap.get(DcMotorEx.class, "br");
         bl.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         fl.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         fr.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
